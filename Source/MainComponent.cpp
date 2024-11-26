@@ -92,7 +92,7 @@ grayLookAndFeel()
                 PopplerPage* nextPdfPage = poppler_document_get_page(pdfDoc, currentPageIndex + 1);
                 if (nextPdfPage)
                 {
-                    renderPdfPageToComponent(nextPdfPage, nextPagePreview, nextPageIndex);
+                    renderPdfPageToComponent(nextPdfPage, nextPagePreview, currentPageIndex + 1);
                     g_object_unref(nextPdfPage);
                     nextPagePreview.setVisible(true);
                 }
@@ -144,7 +144,7 @@ grayLookAndFeel()
                     PopplerPage* nextPdfPage = poppler_document_get_page(pdfDoc, currentPageIndex + 1);
                     if (nextPdfPage)
                     {
-                        renderPdfPageToComponent(nextPdfPage, nextPagePreview, nextPageIndex);
+                        renderPdfPageToComponent(nextPdfPage, nextPagePreview, currentPageIndex + 1);
                         g_object_unref(nextPdfPage);
                         nextPagePreview.setVisible(true);
                     }
@@ -637,7 +637,7 @@ void MainComponent::loadAndDisplayPDF(const juce::File& pdfFile)
         PopplerPage* nextPdfPage = poppler_document_get_page(pdfDoc, currentPageIndex + 1);
         if (nextPdfPage)
         {
-            renderPdfPageToComponent(nextPdfPage, nextPagePreview, nextPageIndex);
+            renderPdfPageToComponent(nextPdfPage, nextPagePreview, currentPageIndex + 1);
             g_object_unref(nextPdfPage);
             nextPagePreview.setVisible(true);
         }
